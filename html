@@ -1,0 +1,179 @@
+# -Pra-minha-princesa-
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para o meu amor ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffb6c9, #ffe0e9, #ffc4d6);
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255,255,255,0.88);
+    max-width: 420px;
+    width: 100%;
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(180,50,90,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 65px;
+    animation: pulse 1.5s infinite;
+}
+
+h1 {
+    color: #d6336c;
+    margin: 15px 0;
+    font-size: 27px;
+}
+
+p {
+    color: #68404e;
+    line-height: 1.8;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 15px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c72c60;
+    transform: scale(1.05);
+}
+
+#surpresa {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff0f5;
+    border-radius: 15px;
+    color: #c72c60;
+    line-height: 1.8;
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    animation: subir 7s linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    50% { transform: scale(1.15); }
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">❤️</div>
+
+    <h1>Um carinho para você, meu amor!</h1>
+
+    <p>
+        Eu soube que você machucou seu joelhinho
+        e queria fazer algo especial para te lembrar
+        de uma coisa...
+    </p>
+
+    <p>
+        Você é muito importante para mim.
+        Espero que fique bem logo e que essa dor
+        passe rapidinho.
+    </p>
+
+    <p>
+        Cuide-se, descanse e não esqueça:
+        você merece todo carinho do mundo! 💗
+    </p>
+
+    <button onclick="mostrarSurpresa()">
+        Clique para receber um carinho 💌
+    </button>
+
+    <div id="surpresa">
+        <h2>Uma mensagem para você ❤️</h2>
+
+        Eu queria poder transformar essa dor
+        em um sorriso seu. Mesmo quando você
+        não estiver nos seus melhores dias,
+        quero que saiba que continua sendo
+        uma pessoa muito especial.
+
+        <br><br>
+
+        Não tenha pressa para melhorar.
+        Se cuide bastante, minha princesa.
+        Estou torcendo por você!
+
+        <br><br>
+
+        <strong>Eu te amo! ❤️</strong>
+    </div>
+
+</div>
+
+<script>
+function mostrarSurpresa() {
+    document.getElementById("surpresa").style.display = "block";
+}
+
+function criarCoracao() {
+    const coracao = document.createElement("div");
+    coracao.className = "floating";
+    coracao.innerHTML = Math.random() > 0.5 ? "❤️" : "💕";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (15 + Math.random() * 20) + "px";
+    coracao.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => coracao.remove(), 10000);
+}
+
+setInterval(criarCoracao, 600);
+</script>
+
+</body>
+</html>
